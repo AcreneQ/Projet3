@@ -56,8 +56,14 @@ body {
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0
+	margin: 50px 0;
+	text-decoration: none;
 }
+header a{
+	text-decoration: none;
+	color:black;
+}
+
 section {
 	margin: 50px 0
 }
@@ -125,6 +131,58 @@ li:hover {
 	text-align: center;
 	margin-bottom: 1em;
 }
+.categories{
+	display: flex;
+	justify-content: center;
+	
+	
+}
+.categories button {
+	border: 1px solid #1D6154;
+	border-radius: 60px;
+    background-color: transparent;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+    padding-right: 15px;
+    cursor: pointer;
+    size: 16px;
+    line-height: 19.2px;
+    font-weight: 700;
+	color: #1D6154;
+	margin-left: 10px;
+	margin-bottom: 60px;
+	font-family: 'Syne';
+}
+.categories button:focus {
+	background-color: #1D6154;
+	color: white;
+}
+
+.login-container{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+.login-container button{
+	border: 1px solid #1D6154;
+	border-radius: 60px;
+    background-color: #1D6154;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+    padding-right: 15px;
+    cursor: pointer;
+    size: 16px;
+    line-height: 19.2px;
+    font-weight: 700;
+	color: white;
+	margin-left: 10px;
+	margin-bottom: 60px;
+	font-family: 'Syne';
+}
+
 .gallery {
 	width: 100%;
 	display: grid;
