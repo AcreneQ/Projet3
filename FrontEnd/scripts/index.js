@@ -1,129 +1,136 @@
-const gallery = document.querySelector(".gallery");
-const filter = document.getElementById('categories')
+const gallery = document.querySelector('.gallery')
 const categoryObject = document.getElementById('category-object')
 const categoryAll = document.getElementById('category-all')
 const categoryAppartements = document.getElementById('category-appartements')
 const categoryHotels = document.getElementById('category-hotels')
+const liLogin = document.getElementById('login')
 
 let works
+let token = localStorage.token
+console.log(token)
 
-fetch("http://localhost:5678/api/works")
-    .then(response => response.json())
-    .then(data => {
-        data.forEach(item => {
-            const figure = document.createElement("figure");
-            const img = document.createElement("img");
-            img.crossorigin = "anonymous";
-            img.src = item.imageUrl;
-            img.alt = item.title;
-            const figcaption = document.createElement("figcaption");
-            figcaption.textContent = item.title;
-            figure.appendChild(img);
-            figure.appendChild(figcaption);
-            gallery.appendChild(figure);
-        });
-        console.log(data)
-        works = data
-    });
+if (token) {
+  liLogin.innerHTML = 'logout'
+}
+
+liLogin.addEventListener('click', () => {
+  localStorage.removeItem('token')
+  token = null
+})
+
+fetch('http://localhost:5678/api/works')
+  .then(response => response.json())
+  .then(data => {
+    data.forEach(item => {
+      const figure = document.createElement('figure')
+      const img = document.createElement('img')
+      img.crossorigin = 'anonymous'
+      img.src = item.imageUrl
+      img.alt = item.title
+      const figcaption = document.createElement('figcaption')
+      figcaption.textContent = item.title
+      figure.appendChild(img)
+      figure.appendChild(figcaption)
+      gallery.appendChild(figure)
+    })
+    console.log(data)
+    works = data
+  })
 
 categoryObject.addEventListener('click', () => {
-    console.log('click')
-    console.log("works:", works)
+  console.log('click')
+  console.log('works:', works)
 
-    const objects = works.filter(item => item.categoryId === 1)
+  const objects = works.filter(item => item.categoryId === 1)
 
-    console.log("object:", objects)
+  console.log('object:', objects)
 
-    
-    while (gallery.firstChild) {
-        gallery.removeChild(gallery.firstChild)
-    }
+  while (gallery.firstChild) {
+    gallery.removeChild(gallery.firstChild)
+  }
 
-    objects.forEach(item => {
-        const figure = document.createElement("figure");
-        const img = document.createElement("img");
-        img.crossorigin = "anonymous";
-        img.src = item.imageUrl;
-        img.alt = item.title;
-        const figcaption = document.createElement("figcaption");
-        figcaption.textContent = item.title;
-        figure.appendChild(img);
-        figure.appendChild(figcaption);
-        gallery.appendChild(figure);
-    });
+  objects.forEach(item => {
+    const figure = document.createElement('figure')
+    const img = document.createElement('img')
+    img.crossorigin = 'anonymous'
+    img.src = item.imageUrl
+    img.alt = item.title
+    const figcaption = document.createElement('figcaption')
+    figcaption.textContent = item.title
+    figure.appendChild(img)
+    figure.appendChild(figcaption)
+    gallery.appendChild(figure)
+  })
 })
 categoryAppartements.addEventListener('click', () => {
-    console.log('click')
-    console.log("works:", works)
+  console.log('click')
+  console.log('works:', works)
 
-    const appartements = works.filter(item => item.categoryId === 2)
+  const appartements = works.filter(item => item.categoryId === 2)
 
-    console.log("appartements:", appartements)
+  console.log('appartements:', appartements)
 
-    
-    while (gallery.firstChild) {
-        gallery.removeChild(gallery.firstChild)
-    }
+  while (gallery.firstChild) {
+    gallery.removeChild(gallery.firstChild)
+  }
 
-    appartements.forEach(item => {
-        const figure = document.createElement("figure");
-        const img = document.createElement("img");
-        img.crossorigin = "anonymous";
-        img.src = item.imageUrl;
-        img.alt = item.title;
-        const figcaption = document.createElement("figcaption");
-        figcaption.textContent = item.title;
-        figure.appendChild(img);
-        figure.appendChild(figcaption);
-        gallery.appendChild(figure);
-    });
+  appartements.forEach(item => {
+    const figure = document.createElement('figure')
+    const img = document.createElement('img')
+    img.crossorigin = 'anonymous'
+    img.src = item.imageUrl
+    img.alt = item.title
+    const figcaption = document.createElement('figcaption')
+    figcaption.textContent = item.title
+    figure.appendChild(img)
+    figure.appendChild(figcaption)
+    gallery.appendChild(figure)
+  })
 })
 
 categoryHotels.addEventListener('click', () => {
-    console.log('click')
-    console.log("works:", works)
+  console.log('click')
+  console.log('works:', works)
 
-    const hotels = works.filter(item => item.categoryId === 3)
+  const hotels = works.filter(item => item.categoryId === 3)
 
-    console.log("hotels:", hotels)
+  console.log('hotels:', hotels)
 
-    
-    while (gallery.firstChild) {
-        gallery.removeChild(gallery.firstChild)
-    }
+  while (gallery.firstChild) {
+    gallery.removeChild(gallery.firstChild)
+  }
 
-    hotels.forEach(item => {
-        const figure = document.createElement("figure");
-        const img = document.createElement("img");
-        img.crossorigin = "anonymous";
-        img.src = item.imageUrl;
-        img.alt = item.title;
-        const figcaption = document.createElement("figcaption");
-        figcaption.textContent = item.title;
-        figure.appendChild(img);
-        figure.appendChild(figcaption);
-        gallery.appendChild(figure);
-    });
+  hotels.forEach(item => {
+    const figure = document.createElement('figure')
+    const img = document.createElement('img')
+    img.crossorigin = 'anonymous'
+    img.src = item.imageUrl
+    img.alt = item.title
+    const figcaption = document.createElement('figcaption')
+    figcaption.textContent = item.title
+    figure.appendChild(img)
+    figure.appendChild(figcaption)
+    gallery.appendChild(figure)
+  })
 })
 categoryAll.addEventListener('click', () => {
-    console.log('click')
-    console.log("works:", works)
+  console.log('click')
+  console.log('works:', works)
 
+  while (gallery.firstChild) {
+    gallery.removeChild(gallery.firstChild)
+  }
 
-    while (gallery.firstChild) {
-        gallery.removeChild(gallery.firstChild)
-    }
-
-    works.forEach(item => {
-        const figure = document.createElement("figure");
-        const img = document.createElement("img");
-        img.crossorigin = "anonymous";
-        img.src = item.imageUrl;
-        img.alt = item.title;
-        const figcaption = document.createElement("figcaption");
-        figcaption.textContent = item.title;
-        figure.appendChild(img);
-        figure.appendChild(figcaption);
-        gallery.appendChild(figure);
-    });
+  works.forEach(item => {
+    const figure = document.createElement('figure')
+    const img = document.createElement('img')
+    img.crossorigin = 'anonymous'
+    img.src = item.imageUrl
+    img.alt = item.title
+    const figcaption = document.createElement('figcaption')
+    figcaption.textContent = item.title
+    figure.appendChild(img)
+    figure.appendChild(figcaption)
+    gallery.appendChild(figure)
+  })
 })
