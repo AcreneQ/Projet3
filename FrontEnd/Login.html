@@ -18,39 +18,41 @@
 		<h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
 		<nav>
 			<ul>
-				<a href="index.html"><li>projets</li></a>
+				<a href="index.html">
+					<li>projets</li>
+				</a>
 				<li>contact</li>
-				<a href="Login.html"><li>login</li></a>
+				<a href="Login.html">
+					<li>login</li>
+				</a>
 				<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 			</ul>
 		</nav>
 	</header>
 
-    <main>
-    <div class="login-container">
-        <h2>Log in</h2>
+	<main>
+		<div class="login-container">
+			<h2>Log in</h2>
 			<form id="login-form">
-            	<p>E-mail</p>
-                
-                    <input type="text" id="username" >
-                
-
-            	<p>Mot de passe</p>
-            
-                	<input type="password" id="password-field">
-            </form>
-        <button type="submit">Se connecter</button>
-    </div>
+				<p>E-mail</p>
+				<input type="text" id="email">
+				<p>Mot de passe</p>
+				<input type="password" id="password">
+				<input type="submit" value="Se connecter">
+			</form>
+			<p id="error"></p>
+		</div>
 
 
 
 
-    </main>
+	</main>
 
 
 
 
-    <script src="FrontEnd\scripts\login.js"></script>
-	
+	<script src="./scripts/login.js"></script>
+
 </body>
+
 </html>
