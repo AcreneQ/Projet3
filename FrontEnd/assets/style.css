@@ -52,6 +52,7 @@ body {
 	margin:auto;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
+	background-color :#fffef8;
 }
 header {
 	display: flex;
@@ -165,39 +166,55 @@ li:hover {
 	flex-direction: column;
 	align-items: center;
 	vertical-align: baseline;
+	margin-bottom: 20%;
 
 }
+.login-container h2{
+	margin-top: 10%;
+	margin-bottom: 3%;
+}
 .login-container button{
+	display: flex;
+	align-content: center;
 	border: 1px solid #1D6154;
 	border-radius: 60px;
     background-color: #1D6154;
-    padding-left: 15px;
+    text-align: center;
     display: flex;
     align-items: center;
-    padding-right: 15px;
     cursor: pointer;
     size: 16px;
     line-height: 19.2px;
     font-weight: 700;
 	color: white;
-	margin-left: 10px;
 	margin-bottom: 60px;
 	font-family: 'Syne';
 }
 .login-container input {
-	
+	display: flex;
+	flex-wrap: nowrap;
+	align-content: center;
+	align-items: center;
 	font-size: 1.2em;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 	width: 379px;
 	height: 51px;
-	
+}
+
+.login-container p{
+	font-weight: 500;
+	margin-top: 5%;
+	margin-bottom: 2%;
 }
 .login-container textarea {
+	display: flex;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	align-content: center;
 }
 .login-container a {
+	margin-left: 120px;
 	color: black;
 	
 }
@@ -246,19 +263,30 @@ margin: auto;
 }
 
 input[type="submit"]{
+	display: flex;
+	align-items: center;
 	font-family: 'Syne';
 	font-weight: 700;
 	color: white;
 	background-color: #1D6154;
 	margin : 2em auto ;
 	width: 180px;
-	text-align: center;
 	border-radius: 60px ;
+	padding-left: 30px;
+	
 }
-
+.footerlogin {
+	position: fixed;
+	bottom: 0; 
+	left: 0;
+	width: 100%;
+	background-color: white;
+  }
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
 	margin: 2em
 }
+
+
 
